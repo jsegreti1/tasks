@@ -41,6 +41,8 @@ export function isQuestion(message: string): boolean {
     return message.substring(0, message.length - 1) + "?" === message;
 }
 
+/* for some reason the first merge after the pull request failed, trying a second time*/
+
 /**
  * Consumes a word (a string) and returns either `true`, `false`, or `null`. If the string
  * is "yes" (upper or lower case), then return `true`. If the string is "no" (again, either
