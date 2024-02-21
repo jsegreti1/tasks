@@ -135,13 +135,11 @@ export function injectPositive(values: number[]): number[] {
         return injection;
     } else {
         const injection: number[] = [...values];
-        console.log(injection);
         const total = values
             .slice(0, negIdx)
             .reduce((sum: number, num: number) => sum + num);
-        console.log(injection);
         injection.splice(negIdx + 1, 0, total);
-        console.log(injection);
         return injection;
     }
 }
+// I am assuming I can take advantage of mutibility of the variables that are in scope
