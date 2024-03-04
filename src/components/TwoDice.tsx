@@ -41,15 +41,7 @@ export function TwoDice(): JSX.Element {
                     Right Die: <span data-testid="right-die">{rightDie}</span>
                 </div>
             }
-            {leftDie === rightDie ? (
-                leftDie !== 1 ? (
-                    <div>Outcome: Win</div>
-                ) : (
-                    <div>Outcome: Lose</div>
-                )
-            ) : (
-                <div>Outcome:</div>
-            )}
+            {leftDie === rightDie ? leftDie !== 1 ? (<div>Outcome: Win</div>) : (<div>Outcome: Lose</div>) : (<div>Outcome:</div>)}
         </div>
     );
 }
