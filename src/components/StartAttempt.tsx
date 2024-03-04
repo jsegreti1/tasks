@@ -32,7 +32,10 @@ export function StartAttempt(): JSX.Element {
             <Button onClick={stop} disabled={!inProgress}>
                 Stop Quiz
             </Button>
-            <Button onClick={mulligan} disabled={inProgress}>
+            <Button
+                onClick={mulligan}
+                disabled={inProgress || numAttempts == 10}
+            >
                 Mulligan
             </Button>
             {<div>{numAttempts}</div>}
