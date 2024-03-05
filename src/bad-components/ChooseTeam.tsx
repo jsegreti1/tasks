@@ -14,18 +14,18 @@ export function ChooseTeam(): JSX.Element {
     const [allOptions, setAllOptions] = useState<string[]>(PEOPLE);
     const [team, setTeam] = useState<string[]>([]);
 
-    function chooseMember() {
-        /*
+    function chooseMember(
+        event: React.MouseEvent<HTMLButtonElement, MouseEvent>
+    ) {
+        const newMember = event.currentTarget.textContent;
         if (!team.includes(newMember)) {
-            team.push(newMember);
+            const newTeam = [...team, newMember];
+            setTeam(newTeam);
         }
-        */
     }
 
     function clearTeam() {
-        /*
-        team = [];
-        */
+        setTeam([]);
     }
 
     return (
