@@ -11,16 +11,12 @@ const PEOPLE = [
 ];
 
 export function ChooseTeam(): JSX.Element {
-    const [allOptions, setAllOptions] = useState<string[]>(PEOPLE);
+    const [allOptions] = useState<string[]>(PEOPLE);
     const [team, setTeam] = useState<string[]>([]);
 
-    function chooseMember(
-        event: React.MouseEvent<HTMLButtonElement, MouseEvent>
-    ) {
-        const newMember = event.currentTarget.textContent;
+    function chooseMember(newMember: string) {
         if (!team.includes(newMember)) {
-            const newTeam = [...team, newMember];
-            setTeam(newTeam);
+            setTeam((prevTeam) => [...prevTeam, newMember]);
         }
     }
 
@@ -36,7 +32,10 @@ export function ChooseTeam(): JSX.Element {
                     {allOptions.map((option: string) => (
                         <div key={option} style={{ marginBottom: "4px" }}>
                             Add{" "}
-                            <Button onClick={chooseMember} size="sm">
+                            <Button
+                                onClick={() => chooseMember(option)}
+                                size="sm"
+                            >
                                 {option}
                             </Button>
                         </div>
