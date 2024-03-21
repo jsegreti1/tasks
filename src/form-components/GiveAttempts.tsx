@@ -18,7 +18,7 @@ export function GiveAttempts(): JSX.Element {
                     type="number"
                     value={additional}
                     onChange={(event: React.ChangeEvent<HTMLInputElement>) =>
-                        setAdditional(parseInt(event.target.value) || 0)
+                        setAdditional(parseInt(event.target.value))
                     }
                 />
                 <Button onClick={gainAttempts}>gain</Button>
